@@ -1,0 +1,242 @@
+<!-- <#assign chkfileExits= "com.secoo.foms.utils.FreemarkerExtendChkFileFunction"?new()> -->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+<title>页面标题</title>
+
+<!-- 
+
+修改页面标题
+
+css兼容性
+
+上传图片
+
+: url(slj
+: url(http://pic16.secooimg.com/imagesNew/featuresPic/slj
+
+src="slj
+data-original="slj
+
+处理banner图片链接
+
+http://m.secoo.com/activity_doc.html h5规范地址
+
+<#assign fmtPrice= "com.secoo.foms.utils.FreemarkerExtendFormatPriceFunction"?new()>
+<#setting number_format="#">
+<#list productPush as ProductConfig>
+    <li eventdata='{"type":"3","productCode":"${ProductConfig.id!""}","uuid":"page_app_${ProductConfig.pageId}"}' class="activityHandle _${ProductConfig.id!""}_" productCode="${ProductConfig.id!""}" >
+        <p class="cp_pic"><img data-original="//pic11.secooimg.com/product/300/300/${ProductConfig.productshowpicurl!""}" ></p>
+        <p class="cp_name">${ProductConfig.name!""}</p>
+        <div class="cp_buy">
+            <p class="cp_siku"></p>
+            <p class="cp_shichang"></p>
+        </div>
+        <div class="activityDiv">
+            <p class="activityPrice"></p>
+            <p class="cp_shichang"></p>
+        </div>
+        <span class="shouqing_span">售罄</span>
+    </li>
+</#list>
+<input type="hidden" class="productList"  value="<#list productPush as ProductConfig>${ProductConfig.id!""},</#list>"/>
+
+12710295,12718604,11152222,11153874,201306063740,10554380,11153832,12709140
+
+ -->
+
+<link rel="stylesheet" type="text/css" href="//mstatic.secooimg.com/css/activityPrice2016.css">
+<style type="text/css">
+
+img {
+    max-width: 100%;
+}
+
+.mimg {
+    height: 8rem;
+}
+
+.activtyApp_c,
+.nav-content {
+    background-color: #d9c177;
+}
+
+.activtyApp_c {
+    position: relative;
+}
+
+.banner {
+    height: 0rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav, 
+.nav-content,
+.nav li {
+    height: 1.5rem;
+    line-height: 1.5rem;
+}
+
+.nav-content {
+    display: -webkit-box;
+}
+
+.fixed .nav-content {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+}
+
+.nav li {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-flex: 1;
+    margin-left: 1px;
+    width: 0;
+    text-align: center;
+    color: #fff5d6;
+    font-size: 0.75rem;
+    background-color: #724612;
+}
+
+.nav li:first-child {
+    margin-left: 0px;
+}
+
+.nav li:active, 
+.nav li.hover {
+    color: #fad96c;
+    background-color: #724612;
+}
+
+.list {
+    position: relative;
+    overflow: hidden;
+}
+
+</style>
+
+</head>
+
+<body uuid="page_app_${sectionid?c}">
+
+<!--#config timefmt="%Y/%m/%d %H:%M:%S" -->
+
+<div id="header-title" style="display: none;" title="页面标题"></div>
+<section class="activtyApp_c" style="font-size: 0;">
+
+    <div class="banner">
+        <img class="mimg" src="slj/banner_01.jpg" width="100%">
+        <img class="mimg" src="slj/banner_02.jpg" width="100%">
+        <img src="slj/banner_03.jpg" width="100%">
+    </div>
+
+    <div class="nav">
+        <ul class="nav-content">
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <div class="m m0">
+        <div class="list">
+            <img class="mimg" src="slj/m0_0.jpg" width="100%">
+            <div class="activityHandle" eventdata='{"type":"3","productCode":""}'></div>
+            <div class="activityHandle a0" eventdata='{"type":"0","pcDate":"","myTitle":""}'></div>
+        </div>
+
+        <div class="producodeUlList clearfix">
+            <ul>
+                <#if chkfileExits("/data/secoo_web/secooHtml/module/${sectionid?c}/5432.shtml") >
+                    <!--# include virtual="/module/${sectionid?c}/5432.shtml"-->
+                </#if>
+            </ul>
+        </div>
+    </div>
+    
+</section>
+
+<!-- 分享数据 -->
+<div special-share data-share-title="页面标题 – 寺库, 我是奢侈品" data-share-url="" data-share-description="寺库奢侈品网站(secoo.com)作为全球最大的奢侈品服务交流平台, 推出了专题主题活动, 100%正品保证, 全球奢品, 尽在寺库!" data-share-img-url=""></div>
+
+<script type="text/javascript" src="//mstatic.secooimg.com/activityJS/app_activity_new_https.js"></script>
+<script type="text/javascript">
+function addScript() {
+
+var win = $(window);
+var body = $('body');
+var curServerDate = new Date("<!--#echo var='DATE_LOCAL' -->");
+var curDate = new Date();
+var anTime = 300;
+
+$('img').picLazyLoad();
+
+
+(function(){
+    var nav = $('.nav');
+    var navTop = nav.offset().top;
+    var navHeight = nav.height();
+    var items = nav.find('li');
+    var itemsTopData = $('.m').map(function(i, node) {
+        return $(node).offset().top;
+    });
+
+    function changeTab(i) {
+        items.removeClass('hover').eq(i).addClass('hover');
+    }
+
+    items.each(function(i, node) {
+        $(node).click(function() {
+            changeTab(i);
+            win.scrollTop(itemsTopData[i] - navHeight + 5);
+        });
+    });
+
+    win.scroll(function(){
+        body[win.scrollTop() >= navTop? 'addClass': 'removeClass']('fixed');
+    });
+
+    changeTab(0);
+})();
+
+}
+</script>
+<script type="text/javascript">
+loadJs.init({
+    js : {
+        "ios": [
+            '//mstatic.secooimg.com/js/zepto.min.js',
+            '//mstatic.secooimg.com/js/zepto.picLazyLoad.js',
+            '//mstatic.secooimg.com/js/comm.js',
+            '//mstatic.secooimg.com/activityJS/ios_activity_min.js'
+        ],
+        "android": [
+            '//mstatic.secooimg.com/js/zepto.min.js',
+            '//mstatic.secooimg.com/js/zepto.picLazyLoad.js',
+            '//mstatic.secooimg.com/activityJS/android_activity_min.js'
+        ],
+        "wap": [
+            '//mstatic.secooimg.com/js/zepto.min.js',
+            '//mstatic.secooimg.com/js/zepto.picLazyLoad.js',
+            '//mstatic.secooimg.com/activityJS/wap_activity_min.js'
+        ]
+    },
+    callback: function(){
+        //addScript();
+    }
+})
+</script>
+
+</body>
+
+</html>
+
+
+
